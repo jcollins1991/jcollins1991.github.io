@@ -334,6 +334,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+35ca5873"});
+  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+2948abb9"});
 }
 //# sourceMappingURL=emoji-all-the-things.map

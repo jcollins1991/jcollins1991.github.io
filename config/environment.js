@@ -5,7 +5,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'emoji-all-the-things',
     environment,
-    rootURL: '/',
+    rootURL: '/dist/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
