@@ -1,5 +1,26 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div style="float: left; width: 400px;">
+	<h3>Input</h3>
+	{{textarea
+		rows=50
+		cols=60
+		value=input
+	}}
+</div>
+<div style="float: left; width: 400px;">
+	<h3>Raw Output</h3>
+	{{textarea
+		rows=50
+		cols=60
+		value=output
+		disabled=true
+	}}
+</div>
+<div style="float: left; width: 400px;">
+	<h3>Python Test</h3>
+	{{textarea
+		rows=50
+		cols=60
+		value=pythonOutput
+		disabled=true
+	}}
+</div>
