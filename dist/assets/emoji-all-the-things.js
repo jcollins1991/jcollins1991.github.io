@@ -37,7 +37,7 @@ define('emoji-all-the-things/components/welcome-page', ['exports', 'ember-welcom
     }
   });
 });
-define('emoji-all-the-things/controllers/convertor', ['exports', 'ember'], function (exports, _ember) {
+define('emoji-all-the-things/controllers/convertor', ['exports', 'ember', 'emoji-all-the-things/utils/emoji-translator'], function (exports, _ember, _emojiTranslator) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -54,15 +54,7 @@ define('emoji-all-the-things/controllers/convertor', ['exports', 'ember'], funct
 			}
 
 			return Array.from(input).map(function (x) {
-				var codePoint = x.codePointAt(0);
-
-				if (codePoint > 200) {
-					var strCode = codePoint.toString(16);
-					var padding = Array(8 + 1 - Array.from(strCode).length).join('0');
-					return '\\U' + padding + strCode;
-				} else {
-					return x;
-				}
+				return (0, _emojiTranslator.default)(x);
 			}).join('');
 		}).property('input'),
 
@@ -343,6 +335,25 @@ define("emoji-all-the-things/templates/instructions", ["exports"], function (exp
   });
   exports.default = Ember.HTMLBars.template({ "id": "Vbp0s5UK", "block": "{\"statements\":[[11,\"h2\",[]],[13],[0,\"Output content too long to copy easily?\"],[14],[0,\"\\n\"],[11,\"ol\",[]],[13],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"Double click inside the text area to select a piece of content\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/one_selected.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"Press cmd+a to select the entire section\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/all_selected.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\"],[14],[0,\"\\n\\n\"],[11,\"br\",[]],[13],[14],[0,\"\\n\"],[11,\"br\",[]],[13],[14],[0,\"\\n\"],[11,\"h2\",[]],[13],[0,\"Want to double check the strings in Python?\"],[14],[0,\"\\n\"],[11,\"ol\",[]],[13],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"\\n\\t\\tInput your testing string\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/input_emoji.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"\\n\\t\\tCopy the results\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/copy_result.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"Open the terminal in Mac\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/open_terminal.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"Enter the Python shell by typing `python` and pressing enter\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/run_python.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"li\",[]],[13],[0,\"\\n\\t\\tPaste the test string and press enter, it should print with the correct emojis\\n\\t\\t\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/test_string.png\"],[15,\"height\",\"140\"],[13],[14],[0,\"\\n\\t\"],[14],[0,\"\\n\"],[14],[0,\"\\n\\n\"],[11,\"br\",[]],[13],[14],[0,\"\\n\"],[11,\"br\",[]],[13],[14],[0,\"\\n\"],[11,\"h2\",[]],[13],[0,\"Have lots of strings to convert? Do it all at once!\"],[14],[0,\"\\n\"],[11,\"p\",[]],[13],[0,\"New lines are preserved, so you can convert many strings at once and copy back into a spreadsheet\"],[14],[0,\"\\n\"],[11,\"img\",[]],[15,\"src\",\"/dist/img/lots.png\"],[15,\"height\",\"700\"],[13],[14],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "emoji-all-the-things/templates/instructions.hbs" } });
 });
+define('emoji-all-the-things/utils/emoji-translator', ['exports'], function (exports) {
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = emojiTranslator;
+	function emojiTranslator(x) {
+		var codePoint = x.codePointAt(0);
+
+		if (codePoint > 200) {
+			var strCode = codePoint.toString(16);
+			var padding = Array(8 + 1 - Array.from(strCode).length).join('0');
+			return '\\U' + padding + strCode;
+		} else {
+			return x;
+		}
+	}
+});
 
 
 define('emoji-all-the-things/config/environment', ['ember'], function(Ember) {
@@ -365,6 +376,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+8c94689a"});
+  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+0e5b721b"});
 }
 //# sourceMappingURL=emoji-all-the-things.map

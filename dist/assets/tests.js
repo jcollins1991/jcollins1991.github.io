@@ -29,6 +29,11 @@ define('emoji-all-the-things/tests/app.lint-test', [], function () {
     assert.expect(1);
     assert.ok(true, 'routes/index.js should pass ESLint\n\n');
   });
+
+  QUnit.test('utils/emoji-translator.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'utils/emoji-translator.js should pass ESLint\n\n');
+  });
 });
 define('emoji-all-the-things/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   'use strict';
@@ -142,6 +147,21 @@ define('emoji-all-the-things/tests/tests.lint-test', [], function () {
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/utils/emoji-translator-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/emoji-translator-test.js should pass ESLint\n\n');
+  });
+});
+define('emoji-all-the-things/tests/unit/utils/emoji-translator-test', ['emoji-all-the-things/utils/emoji-translator', 'qunit'], function (_emojiTranslator, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Utility | emoji translator');
+
+  (0, _qunit.test)('test 😀', function (assert) {
+    var result = (0, _emojiTranslator.default)("😀");
+    assert.equal(result, '\\U00001F600');
   });
 });
 require('emoji-all-the-things/tests/test-helper');

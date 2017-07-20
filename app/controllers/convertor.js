@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+import emojiTranslator from 'emoji-all-the-things/utils/emoji-translator';
+
 export default Ember.Controller.extend({
 	// '\\U000' + b.codePointAt(0).toString(16)
 	input: null,
@@ -11,15 +13,7 @@ export default Ember.Controller.extend({
 		}
 
 		return Array.from(input).map(function(x) {
-			var codePoint = x.codePointAt(0);
-
-			if (codePoint > 200) {
-				var strCode = codePoint.toString(16);
-				var padding = Array(8 + 1 - Array.from(strCode).length).join('0');
-				return '\\U' + padding + strCode;
-			} else {
-				return x
-			}
+			return emojiTranslator(x);
 		}).join('');
 	}).property('input'),
 
