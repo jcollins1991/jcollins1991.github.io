@@ -155,14 +155,26 @@ define('emoji-all-the-things/tests/tests.lint-test', [], function () {
   });
 });
 define('emoji-all-the-things/tests/unit/utils/emoji-translator-test', ['emoji-all-the-things/utils/emoji-translator', 'qunit'], function (_emojiTranslator, _qunit) {
-  'use strict';
+	'use strict';
 
-  (0, _qunit.module)('Unit | Utility | emoji translator');
+	(0, _qunit.module)('Unit | Utility | emoji translator');
 
-  (0, _qunit.test)('test 😀', function (assert) {
-    var result = (0, _emojiTranslator.default)("😀");
-    assert.equal(result, '\\U00001F600');
-  });
+	// these tests must run in chrome, phantom is jank and can't handle emojis </3
+	function gen_test(input, output) {
+		(0, _qunit.test)('test ' + input, function (assert) {
+			var result = (0, _emojiTranslator.default)(input);
+			assert.equal(result, output);
+		});
+	}
+
+	gen_test('😀', '\\U0001f600');
+	gen_test('⌚', '\\U0000231a');
+	gen_test('🌟', '\\U0001f31f');
+	gen_test('🎉', '\\U0001f389');
+	gen_test('🏡', '\\U0001f3e1');
+	gen_test('💋', '\\U0001f48b');
+	gen_test('🌺', '\\U0001f33a');
+	gen_test('🍋', '\\U0001f34b');
 });
 require('emoji-all-the-things/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;

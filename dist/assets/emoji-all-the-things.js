@@ -284,6 +284,10 @@ define('emoji-all-the-things/router', ['exports', 'ember', 'emoji-all-the-things
     this.route('convertor');
   });
 
+  Router.reopen({
+    location: 'hash'
+  });
+
   exports.default = Router;
 });
 define('emoji-all-the-things/routes/index', ['exports', 'ember'], function (exports, _ember) {
@@ -325,7 +329,7 @@ define("emoji-all-the-things/templates/convertor", ["exports"], function (export
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "BUQyUxTu", "block": "{\"statements\":[[11,\"p\",[]],[13],[0,\"\\n\\tYou can view emojipedia for individual emojis i.e.\\n\\n\\t\"],[11,\"a\",[]],[15,\"target\",\"blank\"],[15,\"style\",\"cursor: pointer;\"],[15,\"href\",\"https://emojipedia.org/😀\"],[13],[0,\"https://emojipedia.org/😀\"],[14],[0,\"\\n\"],[14],[0,\"\\n\\n\"],[11,\"div\",[]],[15,\"style\",\"clear: both; overflow: auto;\"],[13],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"↓↓ Paste your emoji copy here ↓↓\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\"],[50,60,[28,[\"input\"]]]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"Translated to Python format\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\",\"disabled\"],[50,60,[28,[\"output\"]],true]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"Testing string (instructions \"],[11,\"a\",[]],[15,\"target\",\"_blank\"],[15,\"href\",\"instructions\"],[13],[0,\"here\"],[14],[0,\")\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\",\"disabled\"],[50,60,[28,[\"pythonOutput\"]],true]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\"],[14],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "emoji-all-the-things/templates/convertor.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "X0/nj3Vg", "block": "{\"statements\":[[11,\"p\",[]],[13],[0,\"\\n\\tYou can view emojipedia for individual emojis i.e.\\n\\n\\t\"],[11,\"a\",[]],[15,\"target\",\"blank\"],[15,\"style\",\"cursor: pointer;\"],[15,\"href\",\"https://emojipedia.org/😀\"],[13],[0,\"https://emojipedia.org/😀\"],[14],[0,\"\\n\"],[14],[0,\"\\n\\n\"],[11,\"div\",[]],[15,\"style\",\"clear: both; overflow: auto;\"],[13],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"↓↓ Paste your emoji copy here ↓↓\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\"],[50,60,[28,[\"input\"]]]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"Translated to Python format\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\",\"disabled\"],[50,60,[28,[\"output\"]],true]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\\t\"],[11,\"div\",[]],[15,\"style\",\"float: left; width: 400px;\"],[13],[0,\"\\n\\t\\t\"],[11,\"h3\",[]],[13],[0,\"Testing string (instructions \"],[6,[\"link-to\"],[\"instructions\"],null,{\"statements\":[[0,\"here\"]],\"locals\":[]},null],[0,\")\"],[14],[0,\"\\n\\t\\t\"],[1,[33,[\"textarea\"],null,[[\"rows\",\"cols\",\"value\",\"disabled\"],[50,60,[28,[\"pythonOutput\"]],true]]],false],[0,\"\\n\\t\"],[14],[0,\"\\n\"],[14],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "emoji-all-the-things/templates/convertor.hbs" } });
 });
 define("emoji-all-the-things/templates/instructions", ["exports"], function (exports) {
   "use strict";
@@ -376,6 +380,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+0e5b721b"});
+  require("emoji-all-the-things/app")["default"].create({"name":"emoji-all-the-things","version":"0.0.0+3857ca66"});
 }
 //# sourceMappingURL=emoji-all-the-things.map
