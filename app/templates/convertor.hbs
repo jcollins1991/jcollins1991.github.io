@@ -1,0 +1,34 @@
+<p>
+	You can view emojipedia for individual emojis i.e.
+
+	<a target="blank" style="cursor: pointer;" href="https://emojipedia.org/😀">https://emojipedia.org/😀</a>
+</p>
+
+<div style="clear: both; overflow: auto;">
+	<div style="float: left; width: 400px;">
+		<h3>&#8595;&#8595; Paste your emoji copy here &#8595;&#8595;</h3>
+		{{textarea
+			rows=50
+			cols=60
+			value=input
+		}}
+	</div>
+	<div style="float: left; width: 400px;">
+		<h3>Translated to Python format</h3>
+		{{textarea
+			rows=50
+			cols=60
+			value=output
+			disabled=true
+		}}
+	</div>
+	<div style="float: left; width: 400px;">
+		<h3>Testing string (instructions <a target="_blank" href="instructions">here</a>)</h3>
+		{{textarea
+			rows=50
+			cols=60
+			value=pythonOutput
+			disabled=true
+		}}
+	</div>
+</div>

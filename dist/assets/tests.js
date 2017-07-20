@@ -10,9 +10,9 @@ define('emoji-all-the-things/tests/app.lint-test', [], function () {
     assert.ok(true, 'app.js should pass ESLint\n\n');
   });
 
-  QUnit.test('controllers/application.js', function (assert) {
+  QUnit.test('controllers/convertor.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'controllers/application.js should pass ESLint\n\n');
+    assert.ok(true, 'controllers/convertor.js should pass ESLint\n\n');
   });
 
   QUnit.test('resolver.js', function (assert) {
@@ -23,6 +23,11 @@ define('emoji-all-the-things/tests/app.lint-test', [], function () {
   QUnit.test('router.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/index.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/index.js should pass ESLint\n\n');
   });
 });
 define('emoji-all-the-things/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {

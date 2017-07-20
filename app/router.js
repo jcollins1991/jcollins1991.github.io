@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+	this.route('instructions');
+	this.route('convertor');
 });
 
 export default Router;
